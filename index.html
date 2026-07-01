@@ -1,48 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DSD II Wortschatz Arena 5.3</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DeutschQuest DSD II</title><link rel="stylesheet" href="css/style.css"></head>
 <body>
-<header><h1>DSD II Wortschatz Arena 5.3</h1><p>20 Themen · Lehrer-Modus · Google-Sheets-Export</p></header>
-<div class="scoreBox"><div class="scoreInner"><span class="pill">Punkte: <span id="score">0</span>/<span id="total">0</span></span><div class="progress"><div id="bar" class="bar"></div></div><button class="secondary" onclick="resetCurrent()">Neu starten</button></div></div>
+<header><h1>DeutschQuest DSD II</h1><p>Wortschatztrainer für DSD II</p></header>
 <main>
-<section class="card"><span class="badge">Start</span><h2>Thema und Übungsform wählen</h2>
-<div class="controls"><div><label><strong>Thema</strong></label><select id="themeSelect"></select></div><div><label><strong>Übungsform</strong></label><select id="modeSelect">
-<option value="training">Phase 1–2: Zuordnen und Wort schreiben</option>
-<option value="families">Phase 3: Wortfamilien</option>
-<option value="prep">Phase 4: Verben mit Präpositionen</option>
-<option value="memory">Phase 5: Memory</option>
-<option value="crossword">Phase 6: Wortkreuzrätsel</option>
-<option value="exam">Phase 7: Lückentext</option>
-<option value="mini">Phase 8: Meinung schreiben</option>
-</select></div></div>
-<section class="studentBox">
-<h3>Lehrer-Modus: Lernerdaten</h3>
-<p class="small">Diese Angaben werden zusammen mit den Ergebnissen gespeichert.</p>
-<div class="controls">
-  <div><label><strong>Name</strong></label><input id="studentName" placeholder="Name der Schülerin"></div>
-  <div><label><strong>Kurs</strong></label><input id="studentCourse" placeholder="z.B. DSD II / III Medio"></div>
+<section class="card">
+<span class="badge">Version 6.0</span>
+<h2>Start</h2>
+<p>Wähle den passenden Modus.</p>
+<div class="navGrid">
+<a class="navCard" href="student.html"><strong>Schüler-Modus</strong><span>Übungen starten und Ergebnisse senden.</span></a>
+<a class="navCard" href="teacher.html"><strong>Lehrer-Modus</strong><span>Google-Sheets-Verbindung konfigurieren.</span></a>
 </div>
-<div class="controls">
-  <div><label><strong>Status</strong></label><p id="saveStatus" class="small">Noch nicht gespeichert.</p></div>
-  <div><label><strong>Google Sheet</strong></label><p class="small">Die URL wird einmalig in <code>js/config.js</code> eingetragen.</p></div>
-</div>
-<button class="secondary" onclick="saveSettings()">Name und Kurs speichern</button>
-<button class="primary" onclick="sendCurrentResults()">Aktuelle Phase an Google Sheet senden</button>
 </section>
-<button class="primary" onclick="render()">Starten</button>
-<div class="modeCards">
-<div class="modeCard"><strong>Training</strong><span>Zuordnen, schreiben und Wortfamilien aufbauen.</span></div>
-<div class="modeCard"><strong>Grammatik</strong><span>Lehrer-Modus mit Google-Sheets-Export.</span></div>
-<div class="modeCard"><strong>DSD-II-Transfer</strong><span>Lückentext und Meinung mit Behauptung, Begründung und Beispiel.</span></div>
-</div></section>
-<section id="content"></section>
 </main>
-<script src="data/themes.js"></script>
-<script src="js/config.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>

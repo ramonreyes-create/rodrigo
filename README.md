@@ -1,48 +1,33 @@
-# DSD II Wortschatz Arena 5.3 – Lehrer-Modus einfach
+# DeutschQuest DSD II 6.0
 
-## Nutzung lokal
-1. ZIP entpacken.
-2. `index.html` im Browser öffnen.
-3. Schülerin gibt nur Name und Kurs ein.
-4. Ergebnisse können an Google Sheets gesendet werden.
+## Archivos principales
+- `index.html`: entrada general.
+- `teacher.html`: configuración del profesor.
+- `student.html`: uso de alumnas.
+- `google/google_apps_script.gs`: código para Google Apps Script.
 
-## Google Sheets einrichten
-1. Google Sheet erstellen.
-2. Erweiterungen → Apps Script.
-3. Code aus `google_apps_script.gs` kopieren und einfügen.
-4. Implementieren → Neue Bereitstellung → Web-App.
-5. Ausführen als: Ich.
-6. Zugriff: Jeder mit dem Link.
-7. Web-App-URL kopieren.
+## Uso local
+1. Descomprime el ZIP.
+2. Abre `teacher.html`.
+3. Pega la URL de tu Google Apps Script.
+4. Guarda.
+5. Abre `student.html`.
 
-## URL einmalig eintragen
-Öffne die Datei:
+## Para Google Sheets
+1. Crea un Google Sheet.
+2. Extensiones → Apps Script.
+3. Pega el contenido de `google/google_apps_script.gs`.
+4. Implementar → Nueva implementación → Aplicación web.
+5. Ejecutar como: tú mismo.
+6. Acceso: cualquiera con el enlace.
+7. Copia la URL y pégala en `teacher.html`.
 
-`js/config.js`
-
-Dort diese Zeile ersetzen:
-
-```js
-window.SHEET_WEBAPP_URL = "";
-```
-
-durch deine URL:
-
-```js
-window.SHEET_WEBAPP_URL = "https://script.google.com/macros/s/DEINE_URL/exec";
-```
-
-Danach müssen die Schülerinnen die URL nicht mehr sehen oder eingeben.
-
-## Gespeichert werden
-- Timestamp
-- Name
-- Kurs
-- Thema
-- Phase
-- Richtig
-- Total
-- Prozent
-- ZeitSekunden
-- Fehler
-- UserAgent
+## Para subir a GitHub Pages
+Cuando esté estable, sube toda la carpeta completa:
+- index.html
+- teacher.html
+- student.html
+- css/
+- js/
+- data/
+- google/

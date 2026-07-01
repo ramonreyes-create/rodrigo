@@ -51,7 +51,7 @@ async function sendCurrentResults(){
   const s=getSettings();
   const status=document.getElementById("saveStatus");
   if(!s.name || !s.course){status.textContent="Bitte Name und Kurs eingeben.";status.className="small saveBad";return;}
-  if(!s.sheetUrl){status.textContent="Google-Sheets-URL fehlt. Öffne teacher.html oder trage die URL in js/config.js ein.";status.className="small saveBad";return;}
+  if(!s.sheetUrl){status.textContent="Google-Sheets-URL fehlt. Bitte Lehrer-Modus konfigurieren.";status.className="small saveBad";return;}
   const score=getCurrentScore();
   const payload={timestamp:new Date().toISOString(),name:s.name,course:s.course,theme:getTheme().title,mode:getModeLabel(),correct:score.ok,total:score.total,percent:score.percent,timeSeconds:Math.round((Date.now()-phaseStart)/1000),errors:collectErrors(),userAgent:navigator.userAgent};
   try{

@@ -2,12 +2,12 @@
 <html lang="de">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DeutschQuest DSD II – Lehrer</title><link rel="stylesheet" href="css/style.css"></head>
 <body>
-<header><h1>Lehrer-Modus 6.1</h1><p>Google Sheets zentral konfigurieren</p></header>
+<header><h1>Lehrer-Modus</h1><p>Konfiguration für Google Sheets</p></header>
 <main>
 <section class="card">
-<span class="badge">Schritt 1</span>
+<span class="badge">Einrichtung</span>
 <h2>Google-Sheets-Verbindung</h2>
-<p class="small">Für lokale Tests wird die URL im Browser gespeichert. Für GitHub Pages kopierst du danach den erzeugten Code in <code>js/config.js</code>.</p>
+<p class="small">Diese Einstellung wird im Browser gespeichert. Für die endgültige Verteilung kann die URL zusätzlich in <code>js/config.js</code> eingetragen werden.</p>
 <label><strong>Web-App-URL</strong></label>
 <input id="sheetUrl" placeholder="https://script.google.com/macros/s/.../exec">
 <div class="controls">
@@ -18,17 +18,7 @@
 <button class="secondary" onclick="testConnection()">Verbindung testen</button>
 <p id="status" class="small">Noch nicht gespeichert.</p>
 </section>
-
 <section class="card">
-<span class="badge">Schritt 2</span>
-<h2>Code für <code>js/config.js</code></h2>
-<p class="small">Kopiere diesen Code in die Datei <code>js/config.js</code>, wenn du die Plattform veröffentlichen möchtest. Dann müssen die Schülerinnen nichts konfigurieren.</p>
-<textarea id="configCode" readonly></textarea>
-<button class="secondary" onclick="copyConfig()">Code kopieren</button>
-</section>
-
-<section class="card">
-<span class="badge">Schritt 3</span>
 <h2>Apps Script</h2>
 <p>Kopiere den Code aus <code>google/google_apps_script.gs</code> in Google Apps Script.</p>
 </section>

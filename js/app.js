@@ -54,7 +54,7 @@ async function sendCurrentResults(){
     return;
   }
   if(!s.sheetUrl){
-    if(status){status.textContent="Bitte Google-Sheets-Web-App-URL eingeben.";status.className="small saveBad";}
+    if(status){status.textContent="https://script.google.com/macros/s/AKfycbzCOlz-DhXX8DIbCa7O4aGXLDn7fZEGHAlZN1z6HnkvcS-6tf-rRI7-ZjbyReGtVXda/exec";status.className="small saveBad";}
     return;
   }
   const score=getCurrentScore();

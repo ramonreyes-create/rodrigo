@@ -2,11 +2,11 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DSD II Wortschatz Arena 5.2</title>
+<title>DSD II Wortschatz Arena 5.3</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header><h1>DSD II Wortschatz Arena 5.2</h1><p>20 Themen · Wortschatz · Verben mit Präpositionen · Lückentext · Meinung</p></header>
+<header><h1>DSD II Wortschatz Arena 5.3</h1><p>20 Themen · Lehrer-Modus · Google-Sheets-Export</p></header>
 <div class="scoreBox"><div class="scoreInner"><span class="pill">Punkte: <span id="score">0</span>/<span id="total">0</span></span><div class="progress"><div id="bar" class="bar"></div></div><button class="secondary" onclick="resetCurrent()">Neu starten</button></div></div>
 <main>
 <section class="card"><span class="badge">Start</span><h2>Thema und Übungsform wählen</h2>
@@ -27,10 +27,10 @@
   <div><label><strong>Kurs</strong></label><input id="studentCourse" placeholder="z.B. DSD II / III Medio"></div>
 </div>
 <div class="controls">
-  <div><label><strong>Google-Sheets-Web-App-URL</strong></label><input id="sheetUrl" placeholder="Apps-Script-URL hier einfügen"></div>
   <div><label><strong>Status</strong></label><p id="saveStatus" class="small">Noch nicht gespeichert.</p></div>
+  <div><label><strong>Google Sheet</strong></label><p class="small">Die URL wird einmalig in <code>js/config.js</code> eingetragen.</p></div>
 </div>
-<button class="secondary" onclick="saveSettings()">Einstellungen speichern</button>
+<button class="secondary" onclick="saveSettings()">Name und Kurs speichern</button>
 <button class="primary" onclick="sendCurrentResults()">Aktuelle Phase an Google Sheet senden</button>
 </section>
 <button class="primary" onclick="render()">Starten</button>
@@ -42,6 +42,7 @@
 <section id="content"></section>
 </main>
 <script src="data/themes.js"></script>
+<script src="js/config.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

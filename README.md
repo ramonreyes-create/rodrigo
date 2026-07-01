@@ -1,26 +1,48 @@
-# DSD II Wortschatz Arena 5.1
+# DSD II Wortschatz Arena 5.3 – Lehrer-Modus einfach
 
-Öffnen Sie `index.html` lokal im Browser.
-
-## Änderung 5.1
-- Lückentext funktioniert wieder.
-- Verben mit Präpositionen zeigen vor der Kontrolle nur eine spanische Hilfe.
-- Die deutsche Struktur + Präposition + Kasus erscheint erst nach dem Prüfen.
-
-
-## Version 5.2 – Lehrer-Modus
-
-Neu:
-- Name und Kurs der Schülerin.
-- Google-Sheets-Web-App-URL wird lokal gespeichert.
-- Button: Aktuelle Phase an Google Sheet senden.
-- Gespeichert werden: Datum, Name, Kurs, Thema, Phase, richtig/total, Prozent, Zeit, Fehler.
+## Nutzung lokal
+1. ZIP entpacken.
+2. `index.html` im Browser öffnen.
+3. Schülerin gibt nur Name und Kurs ein.
+4. Ergebnisse können an Google Sheets gesendet werden.
 
 ## Google Sheets einrichten
 1. Google Sheet erstellen.
 2. Erweiterungen → Apps Script.
-3. Datei `google_apps_script.gs` öffnen und Code kopieren.
-4. In Apps Script einfügen.
-5. Implementieren → Neue Bereitstellung → Web-App.
+3. Code aus `google_apps_script.gs` kopieren und einfügen.
+4. Implementieren → Neue Bereitstellung → Web-App.
+5. Ausführen als: Ich.
 6. Zugriff: Jeder mit dem Link.
-7. Web-App-URL in der Plattform einfügen.
+7. Web-App-URL kopieren.
+
+## URL einmalig eintragen
+Öffne die Datei:
+
+`js/config.js`
+
+Dort diese Zeile ersetzen:
+
+```js
+window.SHEET_WEBAPP_URL = "";
+```
+
+durch deine URL:
+
+```js
+window.SHEET_WEBAPP_URL = "https://script.google.com/macros/s/DEINE_URL/exec";
+```
+
+Danach müssen die Schülerinnen die URL nicht mehr sehen oder eingeben.
+
+## Gespeichert werden
+- Timestamp
+- Name
+- Kurs
+- Thema
+- Phase
+- Richtig
+- Total
+- Prozent
+- ZeitSekunden
+- Fehler
+- UserAgent

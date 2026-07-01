@@ -7,24 +7,24 @@ function getSettings(){
   return {
     name: localStorage.getItem("dsdStudentName") || "",
     course: localStorage.getItem("dsdStudentCourse") || "",
-    sheetUrl: localStorage.getItem("dsdSheetUrl") || ""
+    sheetUrl: (window.SHEET_WEBAPP_URL || "").trim()
   };
 }
 function loadSettings(){
   const s=getSettings();
   const n=document.getElementById("studentName");
   const c=document.getElementById("studentCourse");
-  const u=document.getElementById("sheetUrl");
   if(n) n.value=s.name;
   if(c) c.value=s.course;
-  if(u) u.value=s.sheetUrl;
+  const st=document.getElementById("saveStatus");
+  if(st && s.sheetUrl){st.textContent="Google-Sheets-Verbindung ist konfiguriert.";st.className="small saveOk";}
+  if(st && !s.sheetUrl){st.textContent="Bitte zuerst die URL in js/config.js eintragen.";st.className="small saveBad";}
 }
 function saveSettings(){
   localStorage.setItem("dsdStudentName", document.getElementById("studentName").value.trim());
   localStorage.setItem("dsdStudentCourse", document.getElementById("studentCourse").value.trim());
-  localStorage.setItem("dsdSheetUrl", document.getElementById("sheetUrl").value.trim());
   const st=document.getElementById("saveStatus");
-  if(st){st.textContent="Einstellungen gespeichert.";st.className="small saveOk";}
+  if(st){st.textContent="Name und Kurs gespeichert.";st.className="small saveOk";}
 }
 function getModeLabel(){
   const sel=document.getElementById("modeSelect");
@@ -54,7 +54,7 @@ async function sendCurrentResults(){
     return;
   }
   if(!s.sheetUrl){
-    if(status){status.textContent="Bitte Google-Sheets-Web-App-URL eingeben.";status.className="small saveBad";}
+    if(status){status.textContent="Bitte zuerst die Web-App-URL in js/config.js eintragen.";status.className="small saveBad";}
     return;
   }
   const score=getCurrentScore();

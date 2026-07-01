@@ -54,7 +54,7 @@ async function sendCurrentResults(){
     return;
   }
   if(!s.sheetUrl){
-    if(status){status.textContent="Bitte zuerst die Web-App-URL in js/config.js eintragen.";status.className="small saveBad";}
+    if(status){status.textContent="https://script.google.com/macros/s/AKfycbwZgrbbbkFwXYdL-LnDQ4ZMKB5YqDcLQj5tp13EOzvUV2I1mloFCeyvjl1TGWEAz34M/exec";status.className="small saveBad";}
     return;
   }
   const score=getCurrentScore();

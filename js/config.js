@@ -3,4 +3,4 @@
 // Beispiel:
 // window.SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycb.../exec";
 
-window.SHEET_WEBAPP_URL = "";
+window.SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxUbARTfLa-DEC_WN_Ir4gP48efpm3BY_5A33U9fmFWQH-Aoi2SStmpjrq_8W1uI5EY/exec";
